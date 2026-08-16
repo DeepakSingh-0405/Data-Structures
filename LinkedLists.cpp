@@ -108,6 +108,15 @@ void printLL(node* head){
     cout<<endl;
 }
 
+void printLLRecursive(node* head){
+    if(head==NULL){
+        cout<<endl;
+        return;
+    }
+    cout<<head->data<<" ";
+    printLLRecursive(head->next);
+}
+
 int main(){
     node* head = NULL;
 
@@ -121,7 +130,7 @@ int main(){
     reverseLLIterative(&head);
     printLL(head);
     reverseLLRecursive(head, &head);
-    printLL(head);
+    printLLRecursive(head);
 
     deleteAtPosition(&head, 2);
     deleteAtBeginning(&head);
